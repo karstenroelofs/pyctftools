@@ -1,6 +1,4 @@
-from types import FunctionType
-from typing import Dict, List, Iterable
-from tqdm import tqdm
+from typing import Dict, Iterable
 import pyctftools.letter_frequencies as lf
 from english_words import get_english_words_set
 
