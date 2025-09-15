@@ -23,8 +23,8 @@ pip install -e git+https://github.com/karstenroelofs/pyctftools#egg=pyctftools
 This will clone, build and install the repo locally.
 Default clone location for editable installs is:
 
-- \<venv path\>/src/SomeProject in virtual environments
-- \<cwd\>/src/SomeProject for global Python installs
+- \<venv path\>/src/pyctftools in virtual environments
+- \<cwd\>/src/pyctftools for global Python installs
 
 See [Python's Installing Packages](https://packaging.python.org/en/latest/tutorials/installing-packages/) and [pip's VCS support](https://pip.pypa.io/en/latest/topics/vcs-support/#vcs-support) pages for more info.
 
