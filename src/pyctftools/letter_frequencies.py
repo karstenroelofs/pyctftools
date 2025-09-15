@@ -1,36 +1,6 @@
 import json
 from typing import Dict
 
-
-ENGLISH_FREQS_UT = {
-    "A": 0.082,
-    "B": 0.015,
-    "C": 0.028,
-    "D": 0.043,
-    "E": 0.127,
-    "F": 0.022,
-    "G": 0.020,
-    "H": 0.061,
-    "I": 0.07,
-    "J": 0.0015,
-    "K": 0.0077,
-    "L": 0.040,
-    "M": 0.024,
-    "N": 0.067,
-    "O": 0.075,
-    "P": 0.019,
-    "Q": 0.00095,
-    "R": 0.060,
-    "S": 0.063,
-    "T": 0.091,
-    "U": 0.028,
-    "V": 0.0098,
-    "W": 0.024,
-    "X": 0.0015,
-    "Y": 0.020,
-    "Z": 0.00074,
-}
-
 ENGLISH_FREQS = {
     "E": 0.1202,
     "T": 0.0910,
@@ -60,7 +30,7 @@ ENGLISH_FREQS = {
     "Z": 0.0070,
 }
 
-SUPPORTED_LANGUAGES = {"english": ENGLISH_FREQS, "english-ut": ENGLISH_FREQS_UT}
+SUPPORTED_LANGUAGES = {"english": ENGLISH_FREQS}
 
 
 def from_json(file: str) -> Dict:
