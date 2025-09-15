@@ -1,6 +1,6 @@
 [project]
 name = "pyctftools"
-version = "0.0.1.dev1"
+version = "0.0.1.dev2"
 authors = [{ name = "Karsten Roelofs", email = "karsteneroelofs@gmail.com" }]
 description = "A python package containing my personal collection of scripts written over the years during CTF challanges."
 readme = "README.md"
