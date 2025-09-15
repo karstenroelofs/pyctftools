@@ -17,7 +17,7 @@ pip install "pyctftools==0.0.1.dev1"
 However, simply cloning this repo and building it locally may be the smarter option, since this would allow you to directly fix any bugs or alter the code to your own needs.
 
 ```bash
-pip install -e git+https://github.com/karstenroelofs/pyctftools
+pip install -e git+https://github.com/karstenroelofs/pyctftools#egg=pyctftools
 ```
 
 This will clone, build and install the repo locally.
