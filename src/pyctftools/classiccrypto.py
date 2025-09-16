@@ -52,12 +52,14 @@ def dictionary_attack(
         scores[key] = score
         if score >= threshold:
             print(
-                f"Found score of {score} using key {key}, resulting in the following cleartext:"
+                f"Found score of {score} using key {key}, resulting in the"
+                + "following cleartext:"
             )
             print(clear)
     best_key = max(scores, key=lambda key: scores[key])
     print(
-        f"Key with best score is {best_key} with score {round(scores[best_key], 2)} resulting in cleartext:\n"
+        f"Key with best score is {best_key} with score"
+        + f"{round(scores[best_key], 2)} resulting in cleartext:\n"
     )
     print(method(cipher, best_key))
     return scores
@@ -109,7 +111,8 @@ def print_frequency_distribution(
     if isinstance(input, dict):
         if include_absolute_frequencies:
             print(
-                "Ignoring include_absolute_frequencies=True since a dict is supplied as input"
+                "Ignoring include_absolute_frequencies=True since a dict is"
+                + "supplied as input"
             )
             include_absolute_frequencies = False
         freq_dist = input
@@ -145,10 +148,14 @@ def print_frequency_distribution(
         if include_absolute_frequencies:
             rel_freq = value / total
             print(
-                f"{key}: {value}\t({round(rel_freq * 100, 2)}%)\t{round(rel_freq * MAX_WIDTH) * '#'}"
+                f"{key}: {value}\t({round(rel_freq * 100, 2)}%)\t"
+                + f"{round(rel_freq * MAX_WIDTH) * '#'}"
             )
         else:
-            print(f"{key}: {round(value * 100, 2)}%\t{round(value * MAX_WIDTH) * '#'}")
+            print(
+                f"{key}: {round(value * 100, 2)}%\t"
+                + f"{round(value * MAX_WIDTH) * '#'}"
+            )
 
 
 def frequency_analysis(input: str, language: str) -> None:
@@ -232,7 +239,8 @@ def decrypt_mono_alphabetic(
     input: str, key: str | dict, for_undefined: str = "lower"
 ) -> str:
     """Decrypts a message encrypted with a mono alphabetic substitution cipher.
-    The key should be the exact key used to encrypt the message (i.e. not the inverse) and can be given as a string or as a dict"""
+    The key should be the exact key used to encrypt the message
+    (i.e. not the inverse) and can be given as a string or as a dict"""
     if isinstance(key, str):
         input = input.upper()
         key = key.upper()
