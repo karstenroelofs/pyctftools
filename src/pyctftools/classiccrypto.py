@@ -118,13 +118,12 @@ def print_frequency_distribution(
         freq_dist = input
     elif isinstance(input, str):
         # Filter input as required
-        input = input.replace(" ", "").replace("\t", "")
-        if ignore_case:
-            input = input.upper()
-        if ignore_specials:
-            input = "".join(e for e in input if e.isalnum())
-        if ignore_numbers:
-            input = "".join(e for e in input if not e.isnumeric())
+        input = strip_text(
+            input,
+            to_upper=ignore_case,
+            strip_specials=ignore_specials,
+            strip_numbers=ignore_numbers,
+        )
         # Calculate frequency distribution
         freq_dist = frequency_distribution(
             input,
@@ -148,12 +147,12 @@ def print_frequency_distribution(
         if include_absolute_frequencies:
             rel_freq = value / total
             print(
-                f"{key}: {value}\t({round(rel_freq * 100, 2)}%)\t"
-                + f"{round(rel_freq * MAX_WIDTH) * '#'}"
+                f"{key}: {value:<{len(str(total))}} {round(rel_freq * 100, 2):>8}%"
+                + f"\t{round(rel_freq * MAX_WIDTH) * '#'}"
             )
         else:
             print(
-                f"{key}: {round(value * 100, 2)}%\t"
+                f"{key}: {round(value * 100, 2):>8}%\t"
                 + f"{round(value * MAX_WIDTH) * '#'}"
             )
 
@@ -174,10 +173,8 @@ def frequency_analysis(input: str, language: str) -> None:
     print("The frequency distribution of the input is:")
     # print_frequency_distribution(input, sort_on_count=False)
     print_frequency_distribution(input, sort_on_count=True)
-
     print(f"\nThe frequency distribution of {language} is:")
-    for key, value in lang_dist.items():
-        print(f"{key}: {round(value * 100, 2)}%\t{round(value * MAX_WIDTH) * '#'}")
+    print_frequency_distribution(lang_dist, sort_on_count=True)
 
     # Determine naive key
     sorted_cipher_dist = sorted(cipher_dist.items(), key=lambda k: k[1], reverse=True)
