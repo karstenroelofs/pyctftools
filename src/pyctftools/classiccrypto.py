@@ -106,7 +106,7 @@ def print_frequency_distribution(
     ignore_numbers=False,
     include_absolute_frequencies=True,
 ) -> None:
-    MAX_WIDTH = 100
+    MAX_WIDTH = 200
 
     if isinstance(input, dict):
         if include_absolute_frequencies:
