@@ -52,13 +52,13 @@ def dictionary_attack(
         scores[key] = score
         if score >= threshold:
             print(
-                f"Found score of {score} using key {key}, resulting in the"
+                f"Found score of {score} using key {key}, resulting in the "
                 + "following cleartext:"
             )
             print(clear)
     best_key = max(scores, key=lambda key: scores[key])
     print(
-        f"Key with best score is {best_key} with score"
+        f"Key with best score is {best_key} with score "
         + f"{round(scores[best_key], 2)} resulting in cleartext:\n"
     )
     print(method(cipher, best_key))
@@ -111,7 +111,7 @@ def print_frequency_distribution(
     if isinstance(input, dict):
         if include_absolute_frequencies:
             print(
-                "Ignoring include_absolute_frequencies=True since a dict is"
+                "Ignoring include_absolute_frequencies=True since a dict is "
                 + "supplied as input"
             )
             include_absolute_frequencies = False
